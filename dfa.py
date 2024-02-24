@@ -87,7 +87,7 @@ class NFA:
         new_transition = dict()
         new_accepted = set()
 
-        index = 0
+        index = 1
         while index < len(states_list):
             cur_state = frozenset(states_list[index])
             for i in self.symbols:
