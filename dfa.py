@@ -87,7 +87,7 @@ class NFA:
         new_transition = dict()
         new_accepted = set()
 
-        index = 1
+        index = 0
         while index < len(states_list):
             cur_state = frozenset(states_list[index])
             for i in self.symbols:
@@ -105,22 +105,21 @@ class NFA:
         return DFA(new_states, new_transition, new_accepted, frozenset(self.starts))
 
 
-# # nfa = NFA(
-# #     {"0", "1"},
-# #     {0, 1, 2},
-# #     {
-# #         (0, "0"): {0},
-# #         (0, "1"): {0, 1},
-# #         (1, "0"): {2},
-# #         (1, "1"): {2},
-# #         (2, "0"): {0},
-# #         (2, "1"): {0},
-# #     },
-# #     {2},
-# #     {0},
+# nfa = NFA(
+#     {"0", "1"},
+#     {0, 1, 2},
+#     {
+#         (0, "0"): {0},
+#         (0, "1"): {0, 1},
+#         (1, "0"): {2},
+#         (1, "1"): {2},
+#         (2, "0"): {0},
+#         (2, "1"): {1},
+#     },
+#     {2},
+#     {0},
 # )
 
-# print(nfa.run("100010"))
+# print(nfa.run("10"))
 # converted_nfa = nfa.DFA()
-# converted_nfa.print()
-# print(converted_nfa.run("100010"))
+# print(converted_nfa.run("10"))
